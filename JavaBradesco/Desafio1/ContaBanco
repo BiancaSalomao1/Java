@@ -1,2 +1,48 @@
-Início do Curso Java promovido pela Fundação Bradesco através da plataforma DIO.
-Primeiro desafio. Uso inicial de variáveis Java.
+//Início do Curso Java promovido pela Fundação Bradesco através da plataforma DIO.
+//Primeiro desafio. Uso inicial de variáveis Java.
+
+
+package ContaBanco;
+
+import java.util.Scanner;
+
+public class ContaTerminal {
+
+    public static void main(String[] args) {
+        int numero;
+        String agencia, nomeCliente;
+        double saldo;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Você gostaria de introduzir os dados de uma nova conta?");
+        System.out.println("Digite 1 para sim ou 2 para não");
+
+        int i = sc.nextInt();
+
+        if (i == 1) {
+            System.out.println("Por favor, digite o número da conta:");
+            numero = sc.nextInt();
+
+            System.out.println("Por favor, digite o número da agência:");
+            agencia = sc.next();
+
+            System.out.println("Digite o nome do cliente, por gentileza:");
+            sc.nextLine(); 
+            nomeCliente = sc.nextLine();
+
+            System.out.println("Agora, digite o valor do saldo:");
+            saldo = sc.nextDouble();
+        } else {
+            numero = 1021;
+            agencia = "067-8";
+            nomeCliente = "Mario Andrade";
+            saldo = 237.48;
+        }
+
+        System.out.println("\nOlá " + nomeCliente + ", obrigado por criar uma conta em nosso banco.");
+        System.out.println("Sua agência é " + agencia + ", conta " + numero + " e seu saldo de R$" + saldo + " já está disponível.");
+        
+        sc.close();
+    }
+}
